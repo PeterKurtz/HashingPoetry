@@ -17,6 +17,10 @@ public class HashingPoetry {
         System.out.println(poem.writePoem("how-many.txt", "how", 50, false));
         System.out.println();
 
+        System.out.println("--- Harry Potter ---");
+        System.out.println(poem.writePoem("speech.txt", "in", 100, false));
+        System.out.println();
+
 
         //testHashTable("zebra.txt");
         //testUpdatedHashTable();

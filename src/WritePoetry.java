@@ -7,6 +7,8 @@ public class WritePoetry {
 
     public String writePoem(String fileName, String startWord, int length, boolean print) {
 
+        startWord = startWord.toLowerCase();
+
         File file = new File(fileName);
         HashTable<String, WordFreqInfo> poemWords = new HashTable<>();
         ArrayList<String> words = new ArrayList<String>();
@@ -52,7 +54,6 @@ public class WritePoetry {
             int numOfOccur = startWordFreq.getOccurCount();
             int randNumber = rnd.nextInt(numOfOccur);
             word = startWordFreq.getFreqWord(randNumber);
-            //System.out.println(word);
             if (!Character.isAlphabetic(word.charAt(word.length()-1))) {
                 poem = poem + word + "\n";
             }
