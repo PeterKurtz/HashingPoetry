@@ -40,6 +40,21 @@ public class WordFreqInfo {
         return this.occurCount;
     }
 
+    public String getFreqWord(int randNumber) {
+
+        int i = 0;
+        int sum = followList.get(i).followCount;
+
+        while (randNumber > sum) {
+            i += 1;
+            sum += followList.get(i).followCount;
+        }
+
+        String wordToReturn = followList.get(i).follow;
+
+        return wordToReturn;
+    }
+
     private class Frequency {
         String follow;
         int followCount;
@@ -47,6 +62,10 @@ public class WordFreqInfo {
         public Frequency(String follow, int ct) {
             this.follow = follow;
             this.followCount = ct;
+        }
+
+        public int getFollowCount() {
+            return followCount;
         }
 
         @Override
